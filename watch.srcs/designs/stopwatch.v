@@ -7,8 +7,8 @@ output reg [17:0] sw_time);
 sw_lap: to record a laptime, press triggered
 sw_pause: to pause, activate. to release, supress
 current: input time, must be re-initialized to sw_time when pause is released
- 
 sw_time: represent stopwatch time
+laps: laptimes, concat
 */
 
 wire trig;

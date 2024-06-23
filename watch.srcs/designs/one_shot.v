@@ -3,9 +3,12 @@ module one_shot(
     input in,
     output reg out
     );
+/*
+a pulser whose signal lasts a period of clk
+*/
     reg buff;
     always@(posedge clk) begin
-    	buff<=in;
-    	out<=in&&!buff;
+    	buff <= in;
+    	out <= in && !buff; //only true with rising
     end
 endmodule

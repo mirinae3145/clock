@@ -1,26 +1,3 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2024/06/03 16:51:18
-// Design Name: 
-// Module Name: vga_port
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
-
 module vga_port(
     input clk,
     input rstb,    
@@ -163,5 +140,3 @@ wire vsync_load = (vsync_cnt >= (vsync_width - 1)) ? 1'b1 : 1'b0;
 	
 
 endmodule
-
-

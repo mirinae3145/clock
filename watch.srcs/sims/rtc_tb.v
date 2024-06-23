@@ -1,22 +1,23 @@
 `timescale 10ns / 1ns
 module rtc_tb;
-    wire [31:0] MS_ACC;
+    wire [9:0] MS;
     reg CLK;
     reg RSTB;
-    reg [41:0] PRESET_TEST;
-    wire [5:0] SEC,MIN,HR;
-    real SCALE;
+    reg [35:0] PRESET_TEST;
+    wire [17:0]T;
+    reg [2:0]SCALE;
 
-    rtc rtc1(.clk(CLK),.rstb(RSTB),.scale($realtobits(SCALE)),.ms_acc(MS_ACC));
-    time_transform tt1(.clk(CLK),.rstb(RSTB),.ms_acc(MS_ACC),.prst(PRESET_TEST),.sec(SEC),.min(MIN),.hr(HR));
+    rtc rtc1(.clk(CLK),.rstb(RSTB),.scale(SCALE),.ms(MS));
+//    rtc.freq=1;
+    time_transform tt1(.clk(CLK),.rstb(RSTB),.mode(0),.ms(MS),.prst(PRESET_TEST),.t(T));
     
     initial begin
         CLK=0;
         RSTB=0;
-        SCALE=0.5;
-        PRESET_TEST=42'o0001_01_01_10_20_30; //test initial time in oct
+        SCALE=3;
+        PRESET_TEST=35'o01_01_01_10_20_30; //test initial time in oct
         #30 RSTB=1;
-        #10000000 SCALE=0.1;
+        #1000000 SCALE=4;
     end
     always #0.5 CLK = ~CLK;
     

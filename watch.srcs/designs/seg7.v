@@ -4,8 +4,9 @@ module seg7(
     );
 /*
 n: number to display
+seg: segment configure
 */
-    
+    //standard 7-segment form
     assign seg[0] = n==0 || n==2 || n==3 || n==5 || n==6 || n==7 || n==8 || n==9;
     assign seg[1] = n==0 || n==1 || n==2 || n==3 || n==4 || n==7 || n==8 || n==9;
     assign seg[2] = n==0 || n==1 || n==3 || n==4 || n==5 || n==6 || n==7 || n==8 || n==9;

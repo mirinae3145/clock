@@ -1,26 +1,4 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2024/06/07 13:32:05
-// Design Name: 
-// Module Name: vga
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
-
-
- module vga
+module vga
  #(
  parameter Tvw       = 12'd6   ,  //VSYNC Pulse Width
  parameter Tvbp      = 12'd29  ,  //VSYNC Back Porch

@@ -239,5 +239,4 @@ always@(posedge clk or negedge rstb) begin
     		tmp<={hr,min,sec};
     end
 end
-
 endmodule
